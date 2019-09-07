@@ -2,7 +2,7 @@ const postcssPresetEnv = require('postcss-preset-env')
 
 module.exports = {
   siteMetadata: {
-    title: 'Yelloecake',
+    title: 'Jérôme Lemonie',
     siteUrl: 'https://yellowcake.netlify.com'
   },
   plugins: [
@@ -12,7 +12,7 @@ module.exports = {
       resolve: 'gatsby-plugin-google-tagmanager',
       options: {
         /*id: 'GTM-add_your_tag_here',*/
-        id: 'GTM-P4RNF8D',
+        id: 'GTM-5ZJPZ8G',
         includeInDevelopment: false
       }
     },
@@ -44,8 +44,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'yellowcake',
-        short_name: 'yellowcake',
+        name: 'Jérôme Lemonie',
+        short_name: 'Jérôme Lemonie',
         start_url: '/',
         background_color: '#00C2BD',
         theme_color: '#00C2BD',
