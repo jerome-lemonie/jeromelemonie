@@ -58,9 +58,9 @@ class Form extends React.Component {
 
     return (
       <Fragment>
-        <Helmet>
+        {/* <Helmet>
           <script src="https://www.google.com/recaptcha/api.js" />
-        </Helmet>
+        </Helmet> */}
         <form
           className="Form"
           name={name}
@@ -72,7 +72,7 @@ class Form extends React.Component {
           {this.state.alert && (
             <div className="Form--Alert">{this.state.alert}</div>
           )}
-          <div className="Form--Group">
+          {/* <div className="Form--Group"> */}
             <label className="Form--Label">
               <input
                 className="Form--Input Form--InputText"
@@ -81,9 +81,9 @@ class Form extends React.Component {
                 name="firstname"
                 required
               />
-              <span>Firstname</span>
+              <span>Nom</span>
             </label>
-            <label className="Form--Label">
+            {/* <label className="Form--Label">
               <input
                 className="Form--Input Form--InputText"
                 type="text"
@@ -92,9 +92,9 @@ class Form extends React.Component {
                 required
               />
               <span>Lastname</span>
-            </label>
-          </div>
-          <fieldset>
+            </label> */}
+          {/* </div> */}
+          {/* <fieldset>
             <label className="Form--Label Form--Radio">
               <input
                 className="Form--RadioInput"
@@ -114,7 +114,7 @@ class Form extends React.Component {
               />
               <span>Female</span>
             </label>
-          </fieldset>
+          </fieldset> */}
           <label className="Form--Label">
             <input
               className="Form--Input Form--InputText"
@@ -123,9 +123,9 @@ class Form extends React.Component {
               name="emailAddress"
               required
             />
-            <span>Email address</span>
+            <span>Adresse email</span>
           </label>
-          <label className="Form--Label has-arrow">
+          {/* <label className="Form--Label has-arrow">
             <select
               className="Form--Input Form--Select"
               name="type"
@@ -139,7 +139,7 @@ class Form extends React.Component {
               <option>Found a bug</option>
               <option>Want to say hello</option>
             </select>
-          </label>
+          </label> */}
           <label className="Form--Label">
             <textarea
               className="Form--Input Form--Textarea Form--InputText"
@@ -150,24 +150,24 @@ class Form extends React.Component {
             />
             <span>Message</span>
           </label>
-          <label className="Form--Label Form-Checkbox">
+          {/* <label className="Form--Label Form-Checkbox">
             <input
               className="Form--Input Form--Textarea Form--CheckboxInput"
               name="newsletter"
               type="checkbox"
             />
             <span>Get news updates</span>
-          </label>
-          <div
+          </label> */}
+          {/* <div
             className="g-recaptcha"
             data-sitekey="6LfKN3kUAAAAAGIM1CbXmaRZx3LIh_W2twn1tzkA"
-          />
+          /> */}
           {!!subject && <input type="hidden" name="subject" value={subject} />}
           <input type="hidden" name="form-name" value={name} />
           <input
             className="Button Form--SubmitButton"
             type="submit"
-            value="Enquire"
+            value="Envoyer"
             disabled={this.state.disabled}
           />
         </form>

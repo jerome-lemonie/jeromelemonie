@@ -63,15 +63,15 @@ export const BlogIndexTemplate = ({
 
       return (
         <main className="Blog">
-          <PageHeader
+          {/* <PageHeader
             title={title}
             subtitle={subtitle}
             backgroundImage={featuredImage}
-          />
+          /> */}
 
           {!!postCategories.length && (
             <section className="section thin">
-              <div className="container">
+              <div className="container skinny">
                 <PostCategoriesNav enableSearch categories={postCategories} />
               </div>
             </section>
@@ -79,7 +79,7 @@ export const BlogIndexTemplate = ({
 
           {!!posts.length && (
             <section className="section">
-              <div className="container">
+              <div className="container skinny">
                 <PostSection posts={filteredPosts} />
               </div>
             </section>

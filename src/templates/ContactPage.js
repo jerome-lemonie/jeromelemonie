@@ -2,34 +2,37 @@ import React from 'react'
 import { MapPin, Smartphone, Mail } from 'react-feather'
 import { graphql } from 'gatsby'
 
-import PageHeader from '../components/PageHeader'
+// import PageHeader from '../components/PageHeader'
 import FormSimpleAjax from '../components/FormSimpleAjax'
 import Content from '../components/Content'
-import GoogleMap from '../components/GoogleMap'
+// import GoogleMap from '../components/GoogleMap'
 import Layout from '../components/Layout'
 import './ContactPage.css'
 
 // Export Template for use in CMS preview
 export const ContactPageTemplate = ({
   body,
-  title,
-  subtitle,
-  featuredImage,
+  // title,
+  // subtitle,
+  // featuredImage,
   address,
   phone,
   email,
-  locations
+  // locations
 }) => (
   <main className="Contact">
-    <PageHeader
+    {/* <PageHeader
       title={title}
       subtitle={subtitle}
       backgroundImage={featuredImage}
-    />
+    /> */}
     <section className="section Contact--Section1">
-      <div className="container Contact--Section1--Container">
+      <div className="container Contact--Section1--Container skinny">
         <div>
-          <Content source={body} />
+          <FormSimpleAjax name="Simple Form Ajax" />
+        </div>
+        {/* <div> */}
+          {/* <Content source={body} /> */}
           <div className="Contact--Details">
             {address && (
               <a
@@ -54,15 +57,15 @@ export const ContactPageTemplate = ({
               </a>
             )}
           </div>
-        </div>
+        {/* </div> */}
 
-        <div>
+        {/* <div>
           <FormSimpleAjax name="Simple Form Ajax" />
-        </div>
+        </div> */}
       </div>
     </section>
 
-    <GoogleMap locations={locations} />
+    {/* <GoogleMap locations={locations} /> */}
   </main>
 )
 

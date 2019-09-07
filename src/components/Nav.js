@@ -44,13 +44,13 @@ export class Navigation extends Component {
 
     return (
       <nav className={`Nav ${active ? 'Nav-active' : ''}`}>
-        <div className="Nav--Container container">
+        <div className="Nav--Container container skinny">
           <Link to="/" onClick={this.handleLinkClick}>
             <Logo />
           </Link>
           <div className="Nav--Links">
             <NavLink to="/">Moi</NavLink>
-            <NavLink to="/components/">Articles</NavLink>
+            <NavLink to="/blog/">Articles</NavLink>
             <NavLink to="/contact/">Contact</NavLink>
           </div>
           <button
