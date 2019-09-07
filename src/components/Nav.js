@@ -49,41 +49,8 @@ export class Navigation extends Component {
             <Logo />
           </Link>
           <div className="Nav--Links">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/components/">Components</NavLink>
-            <div
-              className={`Nav--Group ${
-                this.state.activeSubNav === 'posts' ? 'active' : ''
-              }`}
-            >
-              <span
-                className={`NavLink Nav--GroupParent ${
-                  this.props.location.pathname.includes('posts') ||
-                  this.props.location.pathname.includes('blog') ||
-                  this.props.location.pathname.includes('post-categories')
-                    ? 'active'
-                    : ''
-                }`}
-                onClick={() => this.toggleSubNav('posts')}
-              >
-                Blog
-              </span>
-              <div className="Nav--GroupLinks">
-                <NavLink to="/blog/" className="Nav--GroupLink">
-                  All Posts
-                </NavLink>
-                {subNav.posts.map((link, index) => (
-                  <NavLink
-                    to={link.slug}
-                    key={'posts-subnav-link-' + index}
-                    className="Nav--GroupLink"
-                  >
-                    {link.title}
-                  </NavLink>
-                ))}
-              </div>
-            </div>
-            <NavLink to="/default/">Default</NavLink>
+            <NavLink to="/">Moi</NavLink>
+            <NavLink to="/components/">Articles</NavLink>
             <NavLink to="/contact/">Contact</NavLink>
           </div>
           <button
