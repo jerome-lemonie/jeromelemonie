@@ -4,9 +4,12 @@ import { graphql } from 'gatsby'
 // import PageHeader from '../components/PageHeader'
 import Content from '../components/Content'
 import Layout from '../components/Layout'
+import Picture from '../components/Picture'
+
+import './HomePage.css'
 
 // Export Template for use in CMS preview
-export const HomePageTemplate = ({ title, subtitle, featuredImage, body }) => (
+export const HomePageTemplate = ({ title, subtitle, featuredImage, picture, body, posts = [] }) => (
   <main className="Home">
     {/* <PageHeader
       // large
@@ -17,6 +20,7 @@ export const HomePageTemplate = ({ title, subtitle, featuredImage, body }) => (
 
     <section className="section">
       <div className="container skinny">
+        <Picture />
         <Content source={body} />
       </div>
     </section>
@@ -24,9 +28,18 @@ export const HomePageTemplate = ({ title, subtitle, featuredImage, body }) => (
 )
 
 // Export Default HomePage for front-end
-const HomePage = ({ data: { page } }) => (
+const HomePage = ({ data: { page, posts } }) => (
   <Layout meta={page.frontmatter.meta || false}>
-    <HomePageTemplate {...page} {...page.frontmatter} body={page.html} />
+    <HomePageTemplate 
+      {...page} 
+      {...page.frontmatter}
+      posts={posts.edges.map(post => ({
+        ...post.node,
+        ...post.node.frontmatter,
+        ...post.node.fields
+      }))}
+      body={page.html} 
+    />
   </Layout>
 )
 
@@ -45,6 +58,28 @@ export const pageQuery = graphql`
         title
         subtitle
         featuredImage
+        picture
+      }
+    }
+    posts: allMarkdownRemark(
+      filter: { fields: { contentType: { eq: "posts" } } }
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            date
+            categories {
+              category
+            }
+            featuredImage
+          }
+        }
       }
     }
   }
