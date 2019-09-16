@@ -8,6 +8,4 @@ meta:
   description: This is a meta description.
   title: The Ultimate Gatsby Starter
 ---
-![](https://ucarecdn.com/a54ae891-e0bc-484e-b551-6b0a761e0781/)
-
 Je m'appelle Jérôme et j'écris des articles sur le développement Web.
