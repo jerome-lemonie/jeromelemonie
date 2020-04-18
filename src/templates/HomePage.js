@@ -10,6 +10,7 @@ import './HomePage.css'
 
 // Export Template for use in CMS preview
 export const HomePageTemplate = ({ title, subtitle, featuredImage, picture, body, posts = [] }) => (
+  
   <main className="Home">
     {/* <PageHeader
       // large
@@ -17,8 +18,27 @@ export const HomePageTemplate = ({ title, subtitle, featuredImage, picture, body
       subtitle={subtitle}
       backgroundImage={featuredImage}
     /> */}
-
     <section className="section">
+      <div
+          className="full-width-image margin-top-0"
+          style={{
+            backgroundImage: `url('https://ucarecdn.com/70c7f33b-bcf2-4cfb-97d4-b6573d56ac66/')`,
+            backgroundPosition: `top left`,
+            backgroundAttachment: `fixed`,
+          }}
+      ></div>
+      <div className="container skinny">
+        <Picture />
+        <Content source={body} />
+      </div>
+      <div
+          className="full-width-image margin-top-0"
+          style={{
+            backgroundImage: `url('https://ucarecdn.com/70c7f33b-bcf2-4cfb-97d4-b6573d56ac66/')`,
+            backgroundPosition: `top left`,
+            backgroundAttachment: `fixed`,
+          }}
+      ></div>
       <div className="container skinny">
         <Picture />
         <Content source={body} />
